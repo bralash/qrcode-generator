@@ -1,49 +1,126 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+}
+
 body {
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    max-width: 800px;
-    margin: 0px auto;
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 20px;
-    text-align: center;
+    background-color: #f8fafc;
 }
 
 section.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    section.wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+.input-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.preview-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    gap: 20px;
     align-items: center;
 }
 
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
 .input-group {
-    width: 100%;
-    max-width: 400px;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #374151;
+    font-weight: bold;
 }
 
 input, select, button {
-    padding: 10px;
-    margin: 5px;
     width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
     box-sizing: border-box;
 }
 
+input[type="color"] {
+    height: 40px;
+}
+
+input[type="file"] {
+    padding: 5px;
+}
+
 button {
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: white;
     border: none;
+    padding: 12px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #45A049;
+    background-color: var(--secondary-color);
+}
+
+.buttons-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.buttons-group button {
+    flex: 1;
 }
 
 #qrcode {
     margin: 20px;
     padding: 20px;
-    background: #fff;
+    background: white;
     border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#download {
+.download-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.error {
+    color: #dc2626;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#logoPreview {
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 10px;
     display: none;
 }

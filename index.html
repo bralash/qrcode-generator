@@ -8,23 +8,69 @@
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
+        <h1>QR Code Generator By Lash</h1>
+
         <section class="wrapper">
-            <h1>QR Code Generator</h1>
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="text">Text or URL</label>
+                    <input
+                        type="text"
+                        id="text"
+                        placeholder="Enter text or URL"
+                    />
+                </div>
 
-            <div class="input-group">
-                <input type="text" id="text" placeholder="Enter text or URL" />
+                <div class="input-group">
+                    <label for="size">QR Code Size</label>
+                    <select id="size">
+                        <option value="100">Small (100x100)</option>
+                        <option value="200" selected>Medium (200x200)</option>
+                        <option value="300">Large (300x300)</option>
+                        <option value="400">Extra Large (400x400)</option>
+                    </select>
+                </div>
 
-                <select id="size" title="Select size">
-                    <option value="100">Small (100x100)</option>
-                    <option value="200" selected>Medium (200x200)</option>
-                    <option value="300">Large (300x300)</option>
-                </select>
+                <div class="input-group">
+                    <label for="errorCorrection">Error Correction Level</label>
+                    <select id="errorCorrection">
+                        <option value="L">Low (7%)</option>
+                        <option value="M">Medium (15%)</option>
+                        <option value="Q">Quartile (25%)</option>
+                        <option value="H" selected>High (30%)</option>
+                    </select>
+                </div>
 
-                <button id="generateBtn">Generate QR Code</button>
+                <div class="input-group">
+                    <label for="foreColor">QR Code Color</label>
+                    <input type="color" id="foreColor" value="#000000" />
+                </div>
+
+                <div class="input-group">
+                    <label for="backColor">Background Color</label>
+                    <input type="color" id="backColor" value="#FFFFFF" />
+                </div>
+
+                <div class="input-group">
+                    <label for="logo">Upload Logo (optional)</label>
+                    <input type="file" id="logo" accept="image/*" />
+                    <img id="logoPreview" alt="Logo preview" />
+                </div>
+
+                <div class="buttons-group">
+                    <button onclick="generateQR()">Generate QR Code</button>
+                    <button onclick="resetForm()">Reset</button>
+                </div>
             </div>
 
-            <div id="qrcode"></div>
-            <a download="qrcode.png" id="download">Download QR Code</a>
+            <div class="preview-section">
+                <h2>Preview</h2>
+                <div id="qrcode"></div>
+                <div class="download-options">
+                    <button onclick="downloadQR('png')">Download PNG</button>
+                    <button onclick="downloadQR('svg')">Download SVG</button>
+                </div>
+            </div>
         </section>
 
         <script src="js/script.js"></script>
