@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>QR Code Generator | Lash</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <section class="wrapper">
+            <h1>QR Code Generator</h1>
+
+            <div class="input-group">
+                <input type="text" id="text" placeholder="Enter text or URL" />
+
+                <select id="size" title="Select size">
+                    <option value="100">Small (100x100)</option>
+                    <option value="200" selected>Medium (200x200)</option>
+                    <option value="300">Large (300x300)</option>
+                </select>
+
+                <button id="generateBtn">Generate QR Code</button>
+            </div>
+
+            <div id="qrcode"></div>
+            <a download="qrcode.png" id="download">Download QR Code</a>
+        </section>
+
+        <script src="js/script.js"></script>
+    </body>
 </html>

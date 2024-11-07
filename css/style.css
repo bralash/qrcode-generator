@@ -1,37 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
-
 body {
-    background-color: #D5E1EF;
-}
-
-img {
-    max-width: 100%;
-}
-
-.container {
-    background-color: white;
-    width: 20%;
-    margin: auto;
-    margin-top: 10%;
-    padding: 16px;
-    border-radius: 20px;
-}
-
-.blue {
-    background-color: #2C7DFA;
-    padding: 64px;
-    border-radius: 10px;
-}
-
-.text {
-    font-family: 'Outfit',sans-serif;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    max-width: 800px;
+    margin: 0px auto;
+    padding: 20px;
     text-align: center;
 }
 
-.text h4 {
-    font-weight: 700;
+section.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
 }
 
-.text p {
-    color: #7D889E;
+.input-group {
+    width: 100%;
+    max-width: 400px;
+}
+
+input, select, button {
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45A049;
+}
+
+#qrcode {
+    margin: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#download {
+    display: none;
 }
