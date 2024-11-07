@@ -8,16 +8,21 @@
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-        <h1>QR Code Generator By Lash</h1>
+        <div class="header">
+            <h1>QR Code Generator by Lash</h1>
+            <p class="subtitle">
+                Create customized QR codes with advanced styling options
+            </p>
+        </div>
 
-        <section class="wrapper">
-            <div class="input-section">
+        <div class="container">
+            <div class="card input-section">
                 <div class="input-group">
-                    <label for="text">Text or URL</label>
+                    <label for="text">Content</label>
                     <input
                         type="text"
                         id="text"
-                        placeholder="Enter text or URL"
+                        placeholder="Enter URL, text, or data to encode"
                     />
                 </div>
 
@@ -32,13 +37,58 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="errorCorrection">Error Correction Level</label>
+                    <label for="errorCorrection"
+                        >Error Correction Level
+                        <span class="tooltip"
+                            >ⓘ
+                            <span class="tooltip-text"
+                                >Higher levels allow for more damage to the QR
+                                code while remaining scannable</span
+                            >
+                        </span>
+                    </label>
                     <select id="errorCorrection">
                         <option value="L">Low (7%)</option>
                         <option value="M">Medium (15%)</option>
                         <option value="Q">Quartile (25%)</option>
                         <option value="H" selected>High (30%)</option>
                     </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Dot Style</label>
+                    <div class="style-options" id="dotStyles">
+                        <div class="style-option selected" data-style="square">
+                            <div style="font-size: 24px">■</div>
+                            Square
+                        </div>
+                        <div class="style-option" data-style="rounded">
+                            <div style="font-size: 24px">●</div>
+                            Rounded
+                        </div>
+                        <div class="style-option" data-style="dots">
+                            <div style="font-size: 24px">⚬</div>
+                            Dots
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Corner Style</label>
+                    <div class="style-options" id="cornerStyles">
+                        <div class="style-option selected" data-style="square">
+                            <div style="font-size: 24px">▣</div>
+                            Square
+                        </div>
+                        <div class="style-option" data-style="rounded">
+                            <div style="font-size: 24px">◉</div>
+                            Rounded
+                        </div>
+                        <div class="style-option" data-style="extra-rounded">
+                            <div style="font-size: 24px">⬤</div>
+                            Extra Rounded
+                        </div>
+                    </div>
                 </div>
 
                 <div class="input-group">
@@ -52,18 +102,32 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="logo">Upload Logo (optional)</label>
+                    <label for="logo"
+                        >Logo (optional)
+                        <span class="tooltip"
+                            >ⓘ
+                            <span class="tooltip-text"
+                                >Recommended size: less than 25% of QR code
+                                size</span
+                            >
+                        </span>
+                    </label>
                     <input type="file" id="logo" accept="image/*" />
                     <img id="logoPreview" alt="Logo preview" />
                 </div>
 
                 <div class="buttons-group">
                     <button onclick="generateQR()">Generate QR Code</button>
-                    <button onclick="resetForm()">Reset</button>
+                    <button
+                        onclick="resetForm()"
+                        style="background-color: #dc2626"
+                    >
+                        Reset
+                    </button>
                 </div>
             </div>
 
-            <div class="preview-section">
+            <div class="card preview-section">
                 <h2>Preview</h2>
                 <div id="qrcode"></div>
                 <div class="download-options">
@@ -71,7 +135,7 @@
                     <button onclick="downloadQR('svg')">Download SVG</button>
                 </div>
             </div>
-        </section>
+        </div>
 
         <script src="js/script.js"></script>
     </body>
